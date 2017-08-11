@@ -27,7 +27,9 @@ In C, we use zero-length array to indicate one buffer for the consistence of str
 	};
 
 on win32-plat, the sizeof(test) = 8(4+4),but in golang, we have to use this data structure to represent this
-> 	type TagHeader struct {
+
+>
+	type TagHeader struct {
 		Type uint32
 		// indicate the length of the field Data in Tag
 		Length uint32
@@ -40,7 +42,8 @@ on win32-plat, the sizeof(test) = 8(4+4),but in golang, we have to use this data
     }
 
 define SizeofTag to calculate the size of Tag
-> 	func SizeofTag(t Tag) uint32 {
+> 	
+	func SizeofTag(t Tag) uint32 {
 		l := uint32(unsafe.Sizeof(t.TagHeader)) + uint32(t.Length)
 		log.Println("sizeof tag:", l, "tag conent:", t)
 		return l
@@ -55,7 +58,8 @@ bytes package in golang offers the typical byte operation functions.
 
 #### how to write object to buffer
 binary package could help.
-> 	// create header into buffer
+> 	
+	// create header into buffer
 	err := binary.Write(buf, binary.BigEndian, header)
 	if err != nil {
 		log.Println("failed to write header, err:", err.Error())
@@ -64,7 +68,8 @@ binary package could help.
 	
 #### 3 append body to buffer
 assuming we have a taglist, and try to append the tags to buffer allocated before.
->	// append tag to []byte
+>	
+	// append tag to []byte
 	// should pass pointer to slice since we want modify the input parameter buf
 	func AppendTag(buf *[]byte, t Tag) {
 		// append content of t.Type
