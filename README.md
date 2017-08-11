@@ -3,9 +3,13 @@ we have an example here to indicate how to build tcp package with the format of 
 
 
 <a href="#anchor_build_header"> build the header </a>
+
 <a href="#anchor_create_package"> create the package </a>
+
 <a href="#anchor_write_object"> write the object to buffer </a>
+
 <a href="#anchor_append_body"> append body to buffer </a>
+
 <a href="#anchor_system_endian"> system endian </a>
 
 #### <a name="anchor_build_header">1 How to build header</a>
