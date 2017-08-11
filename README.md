@@ -1,6 +1,12 @@
 ### build package example
+we have an example here to indicate how to build tcp package with the format of "header + body", this example tells us the way to use binary.BigEndian to produce header, use append to concate the slice of object.
 
-#### <a href="#anchor_build_header"> BuildHeader </a>
+
+#### <a href="#anchor_build_header"> build the header </a>
+#### <a href="#anchor_create_package"> create the package </a>
+#### <a href="#anchor_write_object"> write the object to buffer </a>
+#### <a href="#anchor_append_body"> append body to buffer </a>
+#### <a href="#anchor_system_endian"> system endian </a>
 
 #### <a name="anchor_build_header">1 How to build header</a>
 Generally we build package using the format of "header+body"
@@ -52,13 +58,13 @@ define SizeofTag to calculate the size of Tag
 	}
 
 	
-#### 2 How to create package
+#### <a name="anchor_create_package">2 How to create package</a>
 bytes package in golang offers the typical byte operation functions.
 > 	
 	b := new(bytes.Buffer)
 
 
-#### 3 How to write object to buffer
+#### <a name="anchor_write_object">3 How to write object to buffer</a>
 binary package could help.
 > 	
 	// create header into buffer
@@ -68,7 +74,7 @@ binary package could help.
 	}
 	
 	
-#### 4 Append body to buffer
+#### <a name="anchor_append_body">4 Append body to buffer</a>
 Assuming we have a taglist, and try to append the tags to buffer allocated before.
 >	
 	// append tag to []byte
@@ -91,7 +97,7 @@ Assuming we have a taglist, and try to append the tags to buffer allocated befor
 one trivial poinit here is append "[]byte{0}" as the last zero-byte of the string to buffer.
 
 
-#### 5 System Endian
+#### <a name="anchor_system_endian">5 System Endian</a>
 While create header, generaly we use binary.BigEndian to format the header to buffer, while append the body, we prefer to use LittleEndian.
 
 
