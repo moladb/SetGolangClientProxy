@@ -2,11 +2,11 @@
 we have an example here to indicate how to build tcp package with the format of "header + body", this example tells us the way to use binary.BigEndian to produce header, use append to concate the slice of object.
 
 
-<a href="#anchor_build_header"> build the header </a><br>
-<a href="#anchor_create_package"> create the package </a><br>
-<a href="#anchor_write_object"> write the object to buffer </a><br>
-<a href="#anchor_append_body"> append body to buffer </a><br>
-<a href="#anchor_system_endian"> system endian </a><br>
+<a href="#anchor_build_header"> 1. build the header </a><br>
+<a href="#anchor_create_package"> 2. create the package </a><br>
+<a href="#anchor_write_object"> 3. write the object to buffer </a><br>
+<a href="#anchor_append_body"> 4. append body to buffer </a><br>
+<a href="#anchor_system_endian"> 5. system endian </a><br>
 
 #### <a name="anchor_build_header">1 How to build header</a>
 Generally we build package using the format of "header+body"
