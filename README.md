@@ -56,7 +56,7 @@ bytes package in golang offers the typical byte operation functions.
 	b := new(bytes.Buffer)
 
 
-#### how to write object to buffer
+#### 3 How to write object to buffer
 binary package could help.
 > 	
 	// create header into buffer
@@ -66,8 +66,8 @@ binary package could help.
 	}
 	
 	
-#### 3 append body to buffer
-assuming we have a taglist, and try to append the tags to buffer allocated before.
+#### 4 Append body to buffer
+Assuming we have a taglist, and try to append the tags to buffer allocated before.
 >	
 	// append tag to []byte
 	// should pass pointer to slice since we want modify the input parameter buf
@@ -89,7 +89,7 @@ assuming we have a taglist, and try to append the tags to buffer allocated befor
 one trivial poinit here is append "[]byte{0}" as the last zero-byte of the string to buffer.
 
 
-####4 System Endian
-while create header, generaly we use binary.BigEndian to format the header to buffer, while append the body, we prefer to use LittleEndian.
+#### 5 System Endian
+While create header, generaly we use binary.BigEndian to format the header to buffer, while append the body, we prefer to use LittleEndian.
 
 
