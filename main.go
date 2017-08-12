@@ -1,11 +1,11 @@
 package main
 
 import (
-	. "github.com/golangSnippet/snippet"
+	"log"
 )
 
 func main() {
 
 	// test build package
-	TestBuildPackage()
+	log.Println("main")
 }
