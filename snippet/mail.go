@@ -1,5 +1,5 @@
 // mail info
-package pojo
+package snippet
 
 type EmailList struct {
 	EmailList []string `json:"emailList"`

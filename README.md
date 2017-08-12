@@ -7,6 +7,7 @@ we have an example here to indicate how to build tcp package with the format of 
 <a href="#anchor_write_object"> 3. write the object to buffer </a><br>
 <a href="#anchor_append_body"> 4. append body to buffer </a><br>
 <a href="#anchor_system_endian"> 5. system endian </a><br>
+<a href="#anchor_gbk_codec"> 6. gbk codec </a><br>
 
 #### <a name="anchor_build_header">1 How to build header</a>
 Generally we build package using the format of "header+body"
@@ -100,4 +101,6 @@ one trivial poinit here is append "[]byte{0}" as the last zero-byte of the strin
 #### <a name="anchor_system_endian">5 System Endian</a>
 While create header, generaly we use binary.BigEndian to format the header to buffer, while append the body, we prefer to use LittleEndian.
 
+#### <a name="anchor_gbk_codec"> 6 GBK Codec</a>
+the package mahonia offers the way to transform gbk to utf8. see codec.go
 
