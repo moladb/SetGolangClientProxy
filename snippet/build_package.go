@@ -1,5 +1,5 @@
 // sytemendian project sytemendian.go
-package main
+package snippet
 
 import (
 	"bytes"
@@ -76,7 +76,7 @@ func BuildConn() (*net.TCPConn, error) {
 	return c, nil
 }
 
-func main() {
+func TestBuildPackage() {
 
 	var header TMPPHeader
 	header.CmdID = 0x00000001 | 0x00006000
